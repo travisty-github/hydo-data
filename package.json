@@ -1,0 +1,17 @@
+{
+  "name": "hydro-data",
+  "version": "0.0.1",
+  "description": "Parses Hydro Tasmania energy storage excel file to JSON.",
+  "main": "index.js",
+  "dependencies": {
+    "xlsx": "^0.8.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Travis Bloomfield",
+  "license": "MIT"
+}

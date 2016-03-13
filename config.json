@@ -1,0 +1,48 @@
+{
+  "lakes": [{
+    "column": "B",
+    "nameRows": [5, 6]
+  }, {
+    "column": "C",
+    "nameRows": [5]
+  }, {
+    "column": "D",
+    "nameRows": [5, 6, 7]
+  }, {
+    "column": "F",
+    "nameRows": [5, 6]
+  }, {
+    "column": "G",
+    "nameRows": [5]
+  }, {
+    "column": "I",
+    "nameRows": [5]
+  }, {
+    "column": "J",
+    "nameRows": [6]
+  }, {
+    "column": "K",
+    "nameRows": [7]
+  }, {
+    "column": "M",
+    "nameRows": [5, 6]
+  }, {
+    "column": "O",
+    "nameRows": [5]
+  }, {
+    "column": "Q",
+    "nameRows": [5, 6]
+  }, {
+    "column": "R",
+    "nameRows": [5]
+  }, {
+    "column": "T",
+    "nameRows": [6]
+  }, {
+    "column": "W",
+    "nameRows": [3]
+  }],
+  "fullStorageRow": 8,
+  "firstDataRow": 10,
+  "dateColumn": "A"
+}
