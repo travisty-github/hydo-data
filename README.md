@@ -3,6 +3,11 @@ Parses Hydro Tasmania Dam levels spreadsheet to JSON format. Data can be
 found at <http://www.hydro.com.au/water/energy-data>
 
 ## Usage
+### Installation
+Install required node modules:
+```bash
+node install
+```
 ### Running hydro-data
 ```bash
 node hydro-data.js <spreadsheet filename>
