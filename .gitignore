@@ -1,2 +1,8 @@
+# Ignore input files
 *.xls
+# Ignore output file
 out.json
+# Ignore nodejs modules
+node_modules
+# Ignore LibreOffice lock files.
+.~lock*
