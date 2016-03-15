@@ -6,7 +6,7 @@ found at <http://www.hydro.com.au/water/energy-data>
 ### Installation
 Install required node modules:
 ```bash
-node install
+npm install
 ```
 ### Running hydro-data
 ```bash
