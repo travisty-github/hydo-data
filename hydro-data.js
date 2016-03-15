@@ -3,7 +3,7 @@ var xlsx = require('xlsx');
 var configLoader = require('./config-loader');
 
 // Check minimum number of arguments
-if (procecess.argv.length < 2) {
+if (process.argv.length < 2) {
   console.log("Incorrect number of arguments. Usage: hydro-data <filename>");
   process.exit(1);
 }
