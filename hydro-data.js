@@ -67,11 +67,16 @@ var lakeLevels = config.lakes.map(function(lake) {
       date: Date.parse(worksheet[config.dateColumn + i].w),
       level: worksheet[lake.column + i].v
     });
+
   }
+
+  // Get maximum capacity (full storage level)
+  var capacity = worksheet[lake.column + config.fullStorageRow].v;
 
   return {
     name: name,
-    historicalLevels: historicalLevels
+    historicalLevels: historicalLevels,
+    capacity: capacity
   };
 });
 
