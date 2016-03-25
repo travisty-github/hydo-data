@@ -1,6 +1,6 @@
 var fs = require('fs');
 var xlsx = require('xlsx');
-var configLoader = require('./config-loader');
+var configLoader = require('./modules/config-loader');
 
 // Check minimum number of arguments
 if (process.argv.length < 2) {
