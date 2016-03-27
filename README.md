@@ -10,8 +10,17 @@ npm install
 ```
 ### Running hydro-data
 ```bash
-node hydro-data.js <spreadsheet filename>
+node hydro-data [options]
 ```
+``` 
+  Options:
+    -h, --help                 output usage information
+    -V, --version              output the version number
+    -i, --in-file [filename]   Source data file.
+    -o, --out-file [filename]  Write parsed data to a file.
+    -m, --mongodb [url]        Store parsed data in MongoDB database.
+  ```
+
 The program will write the JSON data to `out.json`.
 ### Configuration
 Configuration is stored in `config.json`. This defines which cells contain the relevant data for parsing:
