@@ -6,7 +6,6 @@
 
   MongoDBStorage.prototype.connect = function(url) {
     this.db = mongojs(url, ['lakes']);
-    console.log('Connected to ' + url);
   };
 
   MongoDBStorage.prototype.close = function() {
