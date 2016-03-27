@@ -4,6 +4,7 @@
   "description": "Parses Hydro Tasmania energy storage excel file to JSON.",
   "main": "index.js",
   "dependencies": {
+    "mongojs": "^2.3.0",
     "xlsx": "^0.8.0"
   },
   "devDependencies": {

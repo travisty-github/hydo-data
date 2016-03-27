@@ -1,6 +1,8 @@
 var fs = require('fs');
 var configLoader = require('./modules/config-loader');
 var parseExcel = require('./modules/parse-excel');
+var MongodbStorage = require('./modules/mongodb-storage');
+MongodbStorage.connect('mongodb://localhost:27017/hydro-data');
 
 // Check minimum number of arguments
 if (process.argv.length < 2) {
@@ -33,6 +35,14 @@ try {
 
 // Parse file
 var lakeLevels = parseExcel(fileName, config);
+
+
+var complete = function() {
+  MongodbStorage.close();
+  process.exit(0);
+};
+
+MongodbStorage.saveLakeData(lakeLevels, complete);
 
 // Write output file.
 fs.writeFileSync('out.json', JSON.stringify(lakeLevels));
