@@ -2,18 +2,18 @@
 
   var mongojs = require('mongojs');
 
-  function MongodbStorage() {}
+  function MongoDBStorage() {}
 
-  MongodbStorage.prototype.connect = function(url) {
+  MongoDBStorage.prototype.connect = function(url) {
     this.db = mongojs(url, ['lakes']);
     console.log('Connected to ' + url);
   };
 
-  MongodbStorage.prototype.close = function() {
+  MongoDBStorage.prototype.close = function() {
     this.db.close();
   };
 
-  MongodbStorage.prototype.saveLakeData = function(lakeData, callback) {
+  MongoDBStorage.prototype.saveLakeData = function(lakeData, callback) {
     var lakeNames = [];
     var completedUpdates = 0;
 
@@ -54,6 +54,6 @@
 
   };
 
-  module.exports = new MongodbStorage();
+  module.exports = new MongoDBStorage();
 
 }());
