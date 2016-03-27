@@ -3,7 +3,6 @@ var configLoader = require('./modules/config-loader');
 var program = require('commander');
 var parseExcel = require('./modules/parse-excel');
 var MongoDBStorage = require('./modules/mongodb-storage');
-MongoDBStorage.connect('mongodb://localhost:27017/hydro-data');
 
 program
   .version('0.0.1')
@@ -46,12 +45,22 @@ try {
 // Parse file
 var lakeLevels = parseExcel(program.inFile, config);
 
+// Callback for MongoDB update.
 var complete = function() {
   MongoDBStorage.close();
   process.exit(0);
 };
 
-MongoDBStorage.saveLakeData(lakeLevels, complete);
+if (program.outFile) {
+  // Write output file.
+  fs.writeFileSync(program.outFile, JSON.stringify(lakeLevels));
+}
 
-// Write output file.
-fs.writeFileSync('out.json', JSON.stringify(lakeLevels));
+// If data is to be stored in MongoDB, the complete() callback will exit the
+// program. Otherwise we can just exit straight away.
+if (program.mongodb) {
+  MongoDBStorage.connect(program.mongodb);
+  MongoDBStorage.saveLakeData(lakeLevels, complete);
+} else {
+  process.exit(0);
+}
