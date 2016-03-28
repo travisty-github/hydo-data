@@ -42,6 +42,7 @@
         name: lake.name
       }, {
         name: lake.name,
+        capacity: lake.capacity,
         historicalLevels: lake.historicalLevels
       }, {
         upsert: true
