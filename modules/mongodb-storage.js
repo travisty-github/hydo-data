@@ -30,6 +30,7 @@
       }
     }
 
+    // Define class instance to pass into callback function doUpdates()
     var self = this;
 
     // Get all the existing lakes and store the object id.
