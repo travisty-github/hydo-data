@@ -6,3 +6,5 @@ out.json
 node_modules
 # Ignore LibreOffice lock files.
 .~lock*
+# Ignore archive folder
+archive/**
