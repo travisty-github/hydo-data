@@ -1,0 +1,4 @@
+0-59 * * * /usr/src/app/update-docker.sh
+0 12 * * 1 /usr/src/app/update-docker.sh
+0 18 * * 1 /usr/src/app/update-docker.sh
+0 12 * * 2 /usr/src/app/update-docker.sh

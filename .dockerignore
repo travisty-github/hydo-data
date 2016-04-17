@@ -1,0 +1,6 @@
+.git
+archive
+node_modules
+.gitignore
+.jshintrc
+update.sh
