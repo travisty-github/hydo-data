@@ -1,15 +1,22 @@
-FROM alpine:latest
-RUN apk update
-RUN apk upgrade
-RUN apk add nodejs
-EXPOSE 27017
+FROM centos:latest
+MAINTAINER Travis Bloomfield <contact@travisbloomfield.com>
+
+# Download only to begin with. If there are any installation errors then
+# the downloads are cached.
+RUN yum update --downloadonly --assumeyes
+RUN yum update --assumeyes
+RUN yum install cronie wget --assumeyes
+# Get NodeJS 5.x (not available in EPEL)
+RUN curl -sL https://rpm.nodesource.com/setup_5.x | bash -
+RUN yum install nodejs --assumeyes
+
+# Copy over app and cronfile
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY . /usr/src/app
-
-ADD cronfile /etc/cron.d/root
-RUN chmod 0644 /etc/cron.d/root
-
+ADD package.json /usr/src/app
 RUN npm install --production
+COPY . /usr/src/app
+ADD cronfile /var/spool/cron/root
+
 ENV NODE_ENV="production"
-ENTRYPOINT crond -f -l 0 -c /etc/cron.d/
+ENTRYPOINT crond -n -s
